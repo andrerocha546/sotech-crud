@@ -3,8 +3,6 @@ package com.crud.crudsotech.resources;
 import com.crud.crudsotech.entities.Patient;
 import com.crud.crudsotech.services.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,33 +16,28 @@ public class PatientResource {
     private PatientService patientService;
 
     @PostMapping
-    public ResponseEntity.BodyBuilder insert(@RequestBody Patient patient) {
-        patientService.insert(patient);
-        return ResponseEntity.status(HttpStatus.CREATED);
+    public Patient insert(@RequestBody Patient patient) {
+        return patientService.insert(patient);
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Patient> findById(@PathVariable("id") String patientId) {
-        Optional<Patient> patient = patientService.findById(patientId);
-        return ResponseEntity.ok().body(patient.get());
+    public Optional<Patient> findById(@PathVariable("id") String patientId) {
+        return patientService.findById(patientId);
     }
 
     @GetMapping
-    public ResponseEntity<List<Patient>> findAll() {
-        List<Patient> all = patientService.findAll();
-        return ResponseEntity.ok().body(all);
+    public List<Patient> findAll() {
+        return patientService.findAll();
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<Patient> update(@RequestBody Patient patient, @PathVariable("id") String patientId) {
-        Patient pat = patientService.update(patient, patientId);
-        return ResponseEntity.ok().body(pat);
+    public Patient update(@RequestBody Patient patient, @PathVariable("id") String patientId) {
+        return patientService.update(patient, patientId);
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<Void> deleteById(@PathVariable("id") String patientId) {
+    public void deleteById(@PathVariable("id") String patientId) {
         patientService.deleteById(patientId);
-        return ResponseEntity.noContent().build();
     }
 
 }

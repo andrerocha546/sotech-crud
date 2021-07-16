@@ -5,6 +5,7 @@ import com.crud.crudsotech.repositories.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -20,4 +21,9 @@ public class PatientService {
     public Optional<Patient> findById(String patientId) {
         return repository.findById(patientId);
     }
+
+    public List<Patient> findAll() {
+        return repository.findAll();
+    }
+
 }

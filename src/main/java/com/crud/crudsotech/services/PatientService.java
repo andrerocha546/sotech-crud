@@ -26,4 +26,16 @@ public class PatientService {
         return repository.findAll();
     }
 
+    public Patient update(Patient patient, String patientId) {
+        Optional<Patient> newPatient = findById(patientId);
+        updateData(newPatient, patient);
+        return repository.save(newPatient.get());
+    }
+
+    private void updateData(Optional<Patient> newPatient, Patient patient) {
+        newPatient.get().setName(patient.getName());
+        newPatient.get().setAge(patient.getAge());
+        newPatient.get().setParents(patient.getParents());
+    }
+
 }

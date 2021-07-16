@@ -30,4 +30,9 @@ public class PatientResource {
         return patientService.findAll();
     }
 
+    @PutMapping("{id}")
+    public Patient update(@RequestBody Patient patient, @PathVariable("id") String patientId) {
+        return patientService.update(patient, patientId);
+    }
+
 }

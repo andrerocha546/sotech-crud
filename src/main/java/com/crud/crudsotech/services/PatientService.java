@@ -38,4 +38,8 @@ public class PatientService {
         newPatient.get().setParents(patient.getParents());
     }
 
+    public void deleteById(String patientId) {
+        repository.deleteById(patientId);
+    }
+
 }

@@ -35,4 +35,9 @@ public class PatientResource {
         return patientService.update(patient, patientId);
     }
 
+    @DeleteMapping("{id}")
+    public void deleteById(@PathVariable("id") String patientId) {
+        patientService.deleteById(patientId);
+    }
+
 }

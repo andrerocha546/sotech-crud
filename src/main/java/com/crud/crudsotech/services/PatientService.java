@@ -34,7 +34,7 @@ public class PatientService {
 
     private void updateData(Optional<Patient> newPatient, Patient patient) {
         newPatient.get().setName(patient.getName());
-        newPatient.get().setAge(patient.getAge());
+        newPatient.get().setBirthDate(patient.getBirthDate());
         newPatient.get().setParents(patient.getParents());
     }
 

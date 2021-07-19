@@ -1,5 +1,6 @@
 package com.crud.crudsotech.exceptionhandler;
 
+import com.crud.crudsotech.entities.exceptions.InvalidBirthDateException;
 import com.crud.crudsotech.entities.exceptions.InvalidNameException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,13 @@ public class EntityExceptionHandler {
     public ResponseEntity<Object> handlerInvalidNameException(InvalidNameException nameException) {
         HttpStatus notAcceptable = HttpStatus.NOT_ACCEPTABLE;
         Problem problem = createProblem(nameException, notAcceptable);
+        return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(problem);
+    }
+
+    @ExceptionHandler(InvalidBirthDateException.class)
+    public ResponseEntity<Object> handlerInvalidBirthDateException(InvalidBirthDateException birthDateException) {
+        HttpStatus notAcceptable = HttpStatus.NOT_ACCEPTABLE;
+        Problem problem = createProblem(birthDateException, notAcceptable);
         return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(problem);
     }
 

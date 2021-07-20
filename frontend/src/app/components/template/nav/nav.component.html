@@ -1,8 +1,11 @@
-<ul class="nav flex-column bg-primary w-auto">
+<ul class="nav flex-column position-fixed h-100 bg-primary">
     <li class="nav-item">
-        <a class="nav-link text-white active" aria-current="page" href="#">Início</a>
+        <a class="nav-link text-white active" aria-current="page" routerLink='/'>Início</a>
     </li>
     <li class="nav-item">
       <a class="nav-link text-white" href="#">Cadastrar Paciente</a>
     </li>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
 </ul>

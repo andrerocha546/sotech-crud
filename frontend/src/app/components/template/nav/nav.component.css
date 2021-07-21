@@ -1,0 +1,9 @@
+.sidenav {
+    width: 200px;
+}
+
+.content {
+    padding: 16px;
+    color: black;
+    background-color: white;
+}

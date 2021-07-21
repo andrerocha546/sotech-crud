@@ -1,8 +1,18 @@
-<ul class="nav flex-column position-fixed h-100 bg-primary">
-    <li class="nav-item">
-        <a class="nav-link text-white active" aria-current="page" routerLink='/'>Início</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-white" href="#">Cadastrar Paciente</a>
-    </li>
-</ul>
+<mat-sidenav-container class="container">
+    <mat-sidenav class="sidenav bg-primary" mode='side' opened
+        fixedInViewport='true' fixedTopGap='64'>
+        <mat-nav-list class="nav-list">
+            <a mat-list-item class="text-white" routerLink='/'>
+                <i class="material-icons pe-1">home</i>
+                Início
+            </a>
+            <a mat-list-item class="text-white" routerLink='/products'>
+                <i class="material-icons pe-1">storefront</i>
+                Cadastrar Paciente
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

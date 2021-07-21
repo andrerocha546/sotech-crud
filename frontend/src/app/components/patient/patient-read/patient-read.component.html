@@ -1,1 +1,20 @@
-<p>patient-read works!</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Nascimento</th>
+          <th scope="col">Nome da mãe</th>
+          <th scope="col">Nome do pai</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let patient of patients">
+                <th scope="row"> {{ patients.indexOf(patient) }} </th>
+                <th> {{ patient.name }} </th>
+                <th> {{ patient.birthDate | date }} </th>
+                <th> {{ patient.parents.mother.name }} </th>
+                <th> {{ patient.parents.father.name }} </th>
+            </tr>
+        </tbody>
+</table>

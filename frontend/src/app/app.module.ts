@@ -8,7 +8,8 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { PatientReadComponent } from './components/patient/patient-read/patient-read.component'
+import { PatientReadComponent } from './components/patient/patient-read/patient-read.component';
+import { HomeComponent } from './views/home/home.component'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PatientReadComponent } from './components/patient/patient-read/patient-
     HeaderComponent,
     FooterComponent,
     NavComponent,
-    PatientReadComponent
+    PatientReadComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,7 @@ import { PatientService } from '../patient.service';
 })
 export class PatientReadComponent implements OnInit {
 
-  private patients: Array<Patient> = new Array;
+  public patients: Array<Patient> = new Array;
 
   constructor(private patientService: PatientService) { }
 

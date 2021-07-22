@@ -6,15 +6,20 @@
           <th scope="col">Nascimento</th>
           <th scope="col">Nome da mãe</th>
           <th scope="col">Nome do pai</th>
+          <th scope="col">Ações</th>
         </tr>
         </thead>
         <tbody>
             <tr *ngFor="let patient of patients">
                 <th scope="row"> {{ patients.indexOf(patient) }} </th>
                 <th> {{ patient.name }} </th>
-                <th> {{ patient.birthDate | date }} </th>
+                <th> {{ patient.birthDate | date: 'dd/MM/yyyy' }} </th>
                 <th> {{ patient.parents.mother.name }} </th>
                 <th> {{ patient.parents.father.name }} </th>
+                <th>
+                    <button class="btn btn-warning me-3">Editar/mais detalhes</button>
+                    <button class="btn btn-danger" (click)="deleteById(patient.id!)">Deletar</button>
+                </th>
             </tr>
         </tbody>
 </table>

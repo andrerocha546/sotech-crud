@@ -21,4 +21,8 @@ export class PatientReadComponent implements OnInit {
     })
   }
 
+  deleteById(id: string): void {
+    this.patientService.deleteById(id)
+  }
+
 }

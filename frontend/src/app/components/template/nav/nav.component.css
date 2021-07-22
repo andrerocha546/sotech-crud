@@ -2,8 +2,7 @@
     width: 200px;
 }
 
-.content {
-    padding: 16px;
-    color: black;
-    background-color: white;
+.container {
+    margin-left: 0px;
+    padding: 0;
 }

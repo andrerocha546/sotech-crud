@@ -16,4 +16,10 @@ export class PatientService {
     return this.httpClient.get<Patient[]>(this.baseUrl)
   }
 
+  deleteById(id: string): Observable<void> {
+    const url: string = `${this.baseUrl}/${id}`
+    console.log(url)
+    return this.httpClient.delete<void>(url)
+  }
+
 }

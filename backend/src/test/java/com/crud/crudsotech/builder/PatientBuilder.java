@@ -36,6 +36,7 @@ public class PatientBuilder {
 
     public Patient toPatient() {
         Patient patient = new Patient();
+        patient.setId("abc");
         patient.setName(this.name);
         patient.setBirthDate(this.birthDate);
         patient.setParents(this.parents);

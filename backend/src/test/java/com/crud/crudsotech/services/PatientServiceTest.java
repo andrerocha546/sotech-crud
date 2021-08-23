@@ -9,7 +9,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -36,6 +37,19 @@ class PatientServiceTest {
 
         Patient patientCreated = service.insert(patient);
 
+        patientAssertions(patient, patientCreated);
+    }
+
+    @Test
+    public void whenFindAUserByIdItShouldReturnTheUser() {
+        when(repository.findById(patient.getId())).thenReturn(Optional.of(patient));
+
+        Patient patientCreated = service.findById(patient.getId());
+
+        patientAssertions(patient, patientCreated);
+    }
+
+    private void patientAssertions(Patient patient, Patient patientCreated) {
         assertAll(
                 () -> assertEquals(patient.getName(), patientCreated.getName()),
                 () -> assertEquals(patient.getBirthDate(), patientCreated.getBirthDate()),
